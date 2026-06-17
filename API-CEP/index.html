@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Busca CEP - Demon Slayer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-base"></div>
+
+  <!-- Silhueta cidade japonesa SVG -->
+  <div class="bg-city">
+    <svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMax meet">
+      <!-- Céu / névoa -->
+      <ellipse cx="300" cy="180" rx="280" ry="120" fill="rgba(180,60,0,0.18)"/>
+
+      <!-- Torre pagode principal -->
+      <g fill="#1a0500">
+        <!-- Base torre -->
+        <rect x="310" y="280" width="80" height="180"/>
+        <!-- Andares -->
+        <rect x="295" y="255" width="110" height="28"/>
+        <polygon points="290,255 400,255 395,242 305,242" fill="#1a0500"/>
+        <rect x="300" y="220" width="100" height="25"/>
+        <polygon points="296,220 404,220 399,208 301,208" fill="#1a0500"/>
+        <rect x="308" y="188" width="84" height="22"/>
+        <polygon points="303,188 397,188 392,177 308,177" fill="#1a0500"/>
+        <rect x="316" y="158" width="68" height="22"/>
+        <polygon points="311,158 389,158 384,148 316,148" fill="#1a0500"/>
+        <rect x="323" y="132" width="54" height="20"/>
+        <polygon points="318,132 382,132 378,122 322,122" fill="#1a0500"/>
+        <!-- Ponta -->
+        <polygon points="350,80 335,125 365,125" fill="#1a0500"/>
+        <rect x="348" y="60" width="4" height="22"/>
+      </g>
+
+      <!-- Edifício esquerda -->
+      <g fill="#150400">
+        <rect x="160" y="320" width="110" height="140"/>
+        <rect x="148" y="305" width="134" height="18"/>
+        <polygon points="144,305 302,305 298,292 148,292" fill="#150400"/>
+        <rect x="158" y="275" width="114" height="18"/>
+        <polygon points="154,275 278,275 274,263 158,263" fill="#150400"/>
+        <rect x="168" y="248" width="94" height="17"/>
+        <polygon points="164,248 266,248 262,238 168,238" fill="#150400"/>
+        <!-- Ponta -->
+        <polygon points="215,195 200,240 230,240" fill="#150400"/>
+        <rect x="213" y="178" width="4" height="20"/>
+      </g>
+
+      <!-- Edifício direita menor -->
+      <g fill="#120300">
+        <rect x="460" y="340" width="75" height="120"/>
+        <rect x="450" y="328" width="95" height="14"/>
+        <polygon points="446,328 550,328 546,318 450,318" fill="#120300"/>
+        <rect x="458" y="302" width="79" height="18"/>
+        <polygon points="454,302 542,302 538,292 458,292" fill="#120300"/>
+        <!-- Ponta -->
+        <polygon points="497,258 484,295 510,295" fill="#120300"/>
+        <rect x="495" y="243" width="4" height="17"/>
+      </g>
+
+      <!-- Muros/estruturas base -->
+      <rect x="0" y="430" width="900" height="70" fill="#100300"/>
+      <rect x="80" y="400" width="200" height="35" fill="#130400"/>
+      <rect x="400" y="415" width="160" height="25" fill="#110300"/>
+
+      <!-- Janelas iluminadas (laranja suave) -->
+      <rect x="325" y="290" width="8" height="10" fill="rgba(255,120,30,0.4)" rx="1"/>
+      <rect x="367" y="290" width="8" height="10" fill="rgba(255,120,30,0.3)" rx="1"/>
+      <rect x="325" y="325" width="8" height="10" fill="rgba(255,120,30,0.35)" rx="1"/>
+      <rect x="367" y="325" width="8" height="10" fill="rgba(255,120,30,0.25)" rx="1"/>
+      <rect x="180" y="335" width="10" height="12" fill="rgba(255,100,20,0.3)" rx="1"/>
+      <rect x="220" y="335" width="10" height="12" fill="rgba(255,100,20,0.25)" rx="1"/>
+      <rect x="470" y="355" width="8" height="10" fill="rgba(255,110,25,0.3)" rx="1"/>
+      <rect x="505" y="355" width="8" height="10" fill="rgba(255,110,25,0.2)" rx="1"/>
+
+      <!-- Névoa no chão -->
+      <ellipse cx="250" cy="470" rx="300" ry="40" fill="rgba(180,50,0,0.12)"/>
+    </svg>
+  </div>
+
+  <div class="bg-vignette"></div>
+  <div class="kanji-bg">悪魔を退治する者</div>
+
+  <!-- Personagem -->
+  <div class="character">
+    <img src="img/ChatGPT Image 16 de jun. de 2026, 17_06_41.png" alt="Personagem" />
+  </div>
+
+  <div class="page-wrapper">
+    <div class="logo">
+      <img src="img/b38583f1a031514b15259751d6e9944c82205403.png" alt="">
+    </div>
+
+    <h1 class="page-title">Busca CEP com Demon Slayer</h1>
+
+    <div class="card">
+      <div class="card-title">Endereço</div>
+      <div class="fields-grid">
+
+        <div class="field-group">
+          <label class="field-label">CEP</label>
+          <input type="text" id="cep" class="field-input" placeholder="Digite seu CEP" maxlength="9" />
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Estado</label>
+          <input type="text" id="estado" class="field-input" placeholder="Estado" readonly />
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Cidade</label>
+          <input type="text" id="cidade" class="field-input" placeholder="Cidade" readonly />
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Bairro</label>
+          <input type="text" id="bairro" class="field-input" placeholder="Bairro" readonly />
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Logradouro</label>
+          <input type="text" id="logradouro" class="field-input" placeholder="Rua" readonly />
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Numero</label>
+          <input type="text" id="numero" class="field-input" placeholder="N" />
+        </div>
+
+        <div class="field-group full-width">
+          <label class="field-label">Complemento</label>
+          <textarea id="complemento" class="field-input" placeholder="Ex: Torre 2, Apartamento 55"></textarea>
+        </div>
+
+      </div>
+      <button class="btn-buscar" id="btnBuscar" onclick="buscarCEP()">Buscar</button>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
